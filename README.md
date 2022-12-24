@@ -17,4 +17,5 @@ The tests are set to run in parallel.
 
 ## Test run options:
 
+* Run tests in headed mode: `pipenv run e2e-tests-headed`
 * Run tests on chrome and firefox: `pipenv run e2e-tests-all-browsers`
