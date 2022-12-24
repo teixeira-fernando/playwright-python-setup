@@ -1,2 +1,2 @@
-# -playwright-python-setup
+# playwright-python-setup
 Playwright POC using python and pytest
