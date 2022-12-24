@@ -4,12 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest-playwright = "*"
 
 [dev-packages]
+pytest-playwright = "*"
+pytest-xdist = "*"
 
 [requires]
 python_version = "3.9"
 
 [scripts]
-e2e-tests = "pytest"
+e2e-tests = "pytest --numprocesses auto"
+e2e-tests-headed = "pytest --headed --numprocesses auto"
+e2e-tests-all-browsers = "pytest --headed --numprocesses auto"
