@@ -6,11 +6,12 @@ name = "pypi"
 [packages]
 pytest-playwright = "*"
 pytest-xdist = "*"
+pytest = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.*"
+python_version = "3.9"
 
 [scripts]
 e2e-tests = "pytest --numprocesses auto"
