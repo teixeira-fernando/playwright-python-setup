@@ -10,11 +10,8 @@ pytest = "*"
 
 [dev-packages]
 
-[requires]
-python_version = "3.9"
-
 [scripts]
-install-playwright-dependencies = "python -m playwright install --with-deps"
+install-playwright-dependencies = "playwright install --with-deps"
 e2e-tests = "pytest --numprocesses auto"
 e2e-tests-headed = "pytest --headed --numprocesses auto"
-e2e-tests-all-browsers = "pytest --headed --numprocesses auto"
+e2e-tests-all-browsers = "pytest --browser webkit --browser firefox --numprocesses auto"
