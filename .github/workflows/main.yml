@@ -22,7 +22,9 @@ jobs:
           python-version: '3.9'
       - name: Install pipenv
         run: pip install pipenv
-      - name: Install dependencies
+      - name: Install python dependencies
         run: pipenv install
+      - name: Install playwright dependencies
+        run: pipenv run install-playwright-dependencies
       - name: Run e2e-tests
         run: pipenv run e2e-tests
