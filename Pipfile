@@ -4,13 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-
-[dev-packages]
 pytest-playwright = "*"
 pytest-xdist = "*"
 
+[dev-packages]
+
 [requires]
-python_version = "3.9"
+python_version = "3.*"
 
 [scripts]
 e2e-tests = "pytest --numprocesses auto"
