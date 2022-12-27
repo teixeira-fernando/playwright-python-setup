@@ -2,8 +2,7 @@
 import re
 from playwright.sync_api import Page, expect
 
-
-def TestHomepageHasPlaywrightInTitleAndGetStartedLinkLinking(page: Page):
+def testHomepageHasPlaywrightInTitleAndGetStartedLinkLinking(page: Page):
     page.goto("https://playwright.dev/")
 
     # Expect a title "to contain" a substring.
