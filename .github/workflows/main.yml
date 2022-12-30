@@ -36,11 +36,18 @@ jobs:
           name: Pytest Report            # Name of the check run which will be created
           path: test-report/report.xml    # Path to test results
           reporter: java-junit        # Format of test results
-      - name: Deploy HTML test report
-        uses: peaceiris/actions-gh-pages@v3
-        if: always()
+      - name: Publish html test report
+        uses: PavanMudigonda/html-reporter-github-pages@v1.0
+        id: test-report
+        with:
+          test_results: test-report
+          gh_pages: gh-pages
+          results_history: results-history
+      - name: Publish Github Pages
+        if: ${{ always() }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./test-report
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          publish_branch: gh-pages
+          publish_dir: results-history
+          keep_files: true 
