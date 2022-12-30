@@ -27,8 +27,8 @@ jobs:
         run: pipenv install
       - name: Install playwright dependencies
         run: pipenv run install-playwright-dependencies
-      - name: Run e2e-tests
-        run: pipenv run e2e-tests
+      - name: Run e2e-tests-with-reports
+        run: pipenv run e2e-tests-with-reports
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed
